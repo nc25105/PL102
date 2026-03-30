@@ -6,9 +6,12 @@ class Student:
         return self.marks > 75
 
 students = []
-for i in range(5):
-    students.append(Student(input("Enter student name: "), int(input("Enter student marks: "))))
+for i in range(1,6):
+    name = input(f"Enter student {i}: ")
+    marks = int(input(f"Enter marks of {name}: "))
+    students.append(Student(name, marks))
 
+print("Top performing students:")
 for student in students:
     if student.is_topper():
         print(student.name)
